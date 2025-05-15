@@ -10,3 +10,14 @@ def characters(text):
 		else:
 			character_dict[every_character] += 1
 	return character_dict
+def character_sort(character_dict):
+	def sort_on(dict):
+		return dict["num"]
+
+	character_list = []
+	for char, count in character_dict.items():
+		character_list.append({"char": char, "num": count})
+
+	character_list.sort(reverse=True, key=sort_on)
+
+	return character_list
